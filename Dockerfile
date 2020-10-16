@@ -1,4 +1,4 @@
-FROM bodymindarts/cepler
+FROM cepler/cepler-concourse-resource
 
 COPY entrypoint.sh /entrypoint.sh
 
