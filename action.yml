@@ -29,6 +29,5 @@ runs:
     CEPLER_ENVIRONMENT: ${{ inputs.environment }}
   args:
     - ${{ inputs.repository }}
-    - ${{ inputs.check }}
     - ${{ inputs.prepare }}
     - ${{ inputs.record }}
