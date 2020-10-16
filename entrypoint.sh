@@ -6,9 +6,9 @@ export CEPLER_ENVIRONMENT=${3}
 
 cepler check
 
-if [ $? -eq 0 ]; then
-  echo "::set-output name=needs_deploying::true"
-else
-  echo "::set-output name=needs_deploying::false"
+case `cepler check; echo $?` in
+  2)  echo "::set-output name=needs_deploying::false" ;;
+  0)  echo "::set-output name=needs_deploying::true" ;;
+  *)  echo "Error running 'cepler check'" && exit 1
 fi
 
