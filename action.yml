@@ -1,0 +1,30 @@
+name: 'Cepler'
+description: 'Run cepler commands on a repo'
+inputs:
+  repository:  # id of input
+    description: 'Repository'
+    required: true
+  config_path:
+    description: 'Path to cepler.yml file in repository'
+    required: true
+  check:
+    description: 'Should check'
+    default: false
+  prepare:
+    description: 'Should prepare'
+    default: false
+  record:
+    description: 'Should record'
+    default: false
+outputs:
+  cepler_out: # id of output
+    description: 'The processed repository (prepared or recorded)'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repository }}
+    - ${{ inputs.config_path }}
+    - ${{ inputs.check }}
+    - ${{ inputs.prepare }}
+    - ${{ inputs.record }}
