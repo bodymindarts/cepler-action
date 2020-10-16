@@ -24,9 +24,11 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    CEPLER_CONF: ${{ inputs.config_path }}
+    CEPLER_ENVIRONMENT: ${{ inputs.environment }}
   args:
     - ${{ inputs.repository }}
-    - ${{ inputs.config_path }}
     - ${{ inputs.check }}
     - ${{ inputs.prepare }}
     - ${{ inputs.record }}
