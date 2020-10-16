@@ -1,7 +1,8 @@
 #!/bin/bash
 
-export CEPLER_CONF=${1}
-export CEPLER_ENVIRONMENT=${2}
+cd ${1}
+export CEPLER_CONF=${2}
+export CEPLER_ENVIRONMENT=${3}
 
 cepler check
 

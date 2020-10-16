@@ -1,6 +1,10 @@
 name: 'Cepler'
 description: 'Run cepler commands on a repo'
 inputs:
+  repository:
+    description: 'Repository'
+    required: true
+    default: "."
   config_path:
     description: 'Path to cepler.yml file in repository'
     required: true
