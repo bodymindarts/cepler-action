@@ -1,6 +1,4 @@
-FROM rust
-
-RUN cargo install cepler
+FROM bodymindarts/cepler
 
 COPY entrypoint.sh /entrypoint.sh
 
