@@ -1,7 +1,13 @@
 #!/bin/bash
 
-cepler --version
+export CONFIG_FILE=${1}
+export ENVIRONMENT=${2}
 
-echo ARGS: ${@}
-ls
-find .
+cepler check
+
+if [ $? -eq 0 ]; then
+  echo "::set-output name=needs_deploying::true"
+else
+  echo "::set-output name=needs_deploying::false"
+fi
+

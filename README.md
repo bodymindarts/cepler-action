@@ -3,7 +3,7 @@
 name: 'Cepler'
 description: 'Run cepler commands on a repo'
 inputs:
-  repository:  # id of input
+  repository:
     description: 'Repository'
     required: true
     default: "."
