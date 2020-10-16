@@ -27,7 +27,7 @@ runs:
   env:
     CEPLER_CONF: ${{ inputs.config_path }}
     CEPLER_ENVIRONMENT: ${{ inputs.environment }}
+    PREPARE: ${{ inputs.prepare }}
+    RECORD: ${{ inputs.record }}
   args:
     - ${{ inputs.repository }}
-    - ${{ inputs.prepare }}
-    - ${{ inputs.record }}
