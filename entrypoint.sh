@@ -10,10 +10,10 @@ case $? in
   0)  echo "::set-output name=needs_deploying::true" ;;
 esac
 
-if [ "${PREPARE}" -eq "true" ]; then
+if [[ "${PREPARE}" == "true" ]]; then
   cepler prepare --force-clean
 fi
 
-if [ "${RECORD}" -eq "true" ]; then
+if [[ "${RECORD}" == "true" ]]; then
   cepler record --reset-head
 fi
